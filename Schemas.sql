@@ -479,3 +479,17 @@ insert into orders
 (50, '1998-02-03', 6, 7, 600),
 (60, '1998-03-02', 6, 7, 720),
 (70, '1998-05-06', 6, 7, 150);
+
+create table event_log(
+user_id INT,
+event_date_time INT #Using plain INT column type to store unix timestamp is the most trivial option.
+);
+
+Insert into event_log
+(user_id, event_date_time) values
+(7494212, 1535308430),
+(7494212, 1535308433),
+(1475185, 1535308444),
+(6946725, 1535308475),
+(6946725, 1535308476),
+(6946725, 1535308477);
