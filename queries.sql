@@ -19,7 +19,8 @@ from employee
 group by department
 order by employeecount desc;
 
--- 5>  Write a query to fetch only the first name(string before space) from the FullName column of EmployeeDetails table.
+-- 5>  Write a query to fetch only the first name(string before space) from the FullName column of user_name table.
+select distinct(substring_index(full_names, ' ', 1)) first_name from user_name;
 
 -- 6> Write a SQL query to find all the employees from employee table who are also managers
 select e1.first_name, e2.last_name from employee e1 
