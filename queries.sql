@@ -4,6 +4,15 @@ select * from employee order by salary desc;
 --- Limit N-1,1
 select distinct salary from employee order by salary desc limit 2, 1;
 
+--using DENSE_RANK()
+select * from(
+select ename, salary, dense_rank() 
+over(order by salary desc)r from Employee) 
+where r=&n;
+--To find to the 2nd highest sal set n = 2
+--To find 3rd highest sal set n = 3 and so on.
+
+
 -- 2> Write a SQL query to find top n records?
 -- Example: finding top 5 records from employee table
 select * from employee order by salary desc limit 5;
