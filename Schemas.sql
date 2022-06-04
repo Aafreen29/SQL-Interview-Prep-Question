@@ -73,6 +73,15 @@ INSERT INTO Title
 		REFERENCES all_students(student_id)
         ON DELETE CASCADE
  );
+ 
+ INSERT INTO all_students
+ (student_id, school_id, grade_level, date_of_birth, hometown) VALUES
+ (110111, 205, 1, '2013-01-10', 'Pleasanton'),
+ (110115, 205, 1, '2013-03-15', 'Dublin'),
+ (110119, 205, 2, '2012-02-13', 'San Ramon'),
+ (110121, 205, 3, '2011-01-13', 'Dublin'),
+ (110125, 205, 2, '2012-04-25','Dublin'),
+ (110129, 205, 3, '2011-02-22', 'San Ramon');
   
  INSERT INTO attendance_events
  (date_event, student_id, attendance) VALUES
@@ -85,15 +94,6 @@ INSERT INTO Title
  ('2018-02-05', 110111, 'absent'),
  ('2018-02-17', 110115, 'present'),
  ('2018-02-22', 110129, 'absent');
- 
- INSERT INTO all_students
- (student_id, school_id, grade_level, date_of_birth, hometown) VALUES
- (110111, 205, 1, '2013-01-10', 'Pleasanton'),
- (110115, 205, 1, '2013-03-15', 'Dublin'),
- (110119, 205, 2, '2012-02-13', 'San Ramon'),
- (110121, 205, 3, '2011-01-13', 'Dublin'),
- (110125, 205, 2, '2012-04-25','Dublin'),
- (110129, 205, 3, '2011-02-22', 'San Ramon');
  
  CREATE TABLE login_info (
  user_id INT,
@@ -391,6 +391,10 @@ INSERT INTO count_request
 ('AU', 18485, '2.7%','2018-09-15'),
 ('IN', 38364, '3.5%', '2018-09-16');
 
+
+CREATE TABLE confirmation_no(
+phone_number CHAR(15)
+);
 
 CREATE TABLE confirmed_no(
 phone_number CHAR(15)
